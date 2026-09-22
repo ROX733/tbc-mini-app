@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07110d">
+  <title>Earn Mini App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">WELCOME BACK</div>
+        <h1 id="userName">Papai 👋</h1>
+      </div>
+      <button class="icon-btn" id="notifyBtn" aria-label="Notifications">🔔<span></span></button>
+    </header>
+
+    <main>
+      <section class="balance-card">
+        <div class="balance-glow"></div>
+        <div class="balance-label">TOTAL BALANCE</div>
+        <div class="balance-row">
+          <span>₹</span><strong id="balance">125.50</strong>
+        </div>
+        <div class="balance-bottom">
+          <div><small>Today's earning</small><b id="todayEarn">₹25.00</b></div>
+          <button class="primary-btn" id="withdrawBtn">Withdraw</button>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card"><span>⚡</span><small>Tasks Done</small><b id="tasksDone">18</b></div>
+        <div class="stat-card"><span>👥</span><small>Referrals</small><b id="referrals">7</b></div>
+        <div class="stat-card"><span>🎁</span><small>Bonus</small><b id="bonus">₹40</b></div>
+      </section>
+
+      <section class="section-head">
+        <div><div class="eyebrow">QUICK ACTIONS</div><h2>Earn more</h2></div>
+      </section>
+      <div class="quick-grid">
+        <button class="quick-card" data-tab="earn"><div>⚡</div><b>Complete Tasks</b><small>Earn up to ₹50+</small></button>
+        <button class="quick-card" id="referBtn"><div>👥</div><b>Invite Friends</b><small>Get referral rewards</small></button>
+        <button class="quick-card" data-tab="gift"><div>🎁</div><b>Daily Gift</b><small>Claim your bonus</small></button>
+        <button class="quick-card" id="historyBtn"><div>📊</div><b>Activity</b><small>View your earnings</small></button>
+      </div>
+
+      <section class="section-head">
+        <div><div class="eyebrow">AVAILABLE NOW</div><h2>Featured tasks</h2></div>
+        <button class="text-btn" data-tab="earn">View all</button>
+      </section>
+      <div id="featuredTasks" class="task-list"></div>
+
+      <section class="activity-card">
+        <div class="section-head compact"><h2>Recent activity</h2><button class="text-btn" id="activityBtn">See all</button></div>
+        <div id="activityList"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-tab="home"><span>⌂</span><small>Home</small></button>
+      <button class="nav-item" data-tab="earn"><span>⚡</span><small>Earn</small></button>
+      <button class="nav-item" data-tab="gift"><span>🎁</span><small>Gift</small></button>
+      <button class="nav-item" data-tab="rank"><span>🏆</span><small>Rank</small></button>
+    </nav>
+  </div>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-sheet">
+      <button class="close-btn" id="closeModal">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
